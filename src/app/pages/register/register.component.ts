@@ -32,7 +32,7 @@ export default class RegisterComponent implements OnInit{
       next:(res)=>{
         alert("User Created!")
         this.registerForm.reset();
-        this.router.navigate(['home']);
+        this.router.navigate(['login']);
       },
       error:(err)=>{
         console.log(err);
