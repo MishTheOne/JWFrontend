@@ -1,0 +1,39 @@
+<div class="container">
+    <div class="upper">
+        <span class="header">Tasks</span>
+        <button class="close" (click)="closeShowTasks()">&#10006;</button>
+    </div>
+
+    <div class="tabs">
+        <div class="tab" [ngClass]="{'selectedTab':tab1}" (click)="tabOne()">Details</div>
+        <div class="tab" [ngClass]="{'selectedTab':tab2}" (click)="tabTwo()">Customer</div>
+        <div class="tab" [ngClass]="{'selectedTab':tab3}" (click)="tabThree()">History</div>
+    </div>
+
+    <div class="body" *ngIf="tab1" (scroll)="checkthis($event)">
+            <div class="p" *ngFor="let task of this.sharedDataService.tasks; let i = index; let c = count" >
+                <div class="taskCard" >
+                    <div class="agent">
+                        <div id="add">
+                            <img src="../../../assets/icons/plus.png" alt="Icon">
+                        </div>
+                        <div class="content">
+                            <!-- <li>Add</li>
+                            <li>Agent</li> -->
+                        </div>
+                    </div>
+                    <div class="tasks" (click)="showDeliveriesPane(i)">
+                        <div id="time">Time</div>
+                        <div id="recipient">No Recipient</div>
+                        <div id="address">{{task.delivery_address}}</div>
+                        <div (mouseenter)="enterMap()" (mouseleave)="leaveMap()" id="map">{{this.mapBtn}}</div>
+                        <div id="status">Delayed</div>
+                    </div>
+                </div>
+                <div class="assign"></div>
+            </div>
+    </div>
+
+    <div class="body" *ngIf="tab2">Two</div>
+    <div class="body" *ngIf="tab3">Three</div>
+</div>

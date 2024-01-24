@@ -1,5 +1,19 @@
-<app-header />
-<h4 class="text-4xl text-center mt-10 font-bold">Welcome to ReadMeBooks</h4>
+<div class="home">
+    <app-header class="overflow-hidden"> </app-header>
+    <button class="taskPane" *ngIf="!this.sharedDataService.showTasksPane && !this.sharedDataService.createTaskPane && !this.sharedDataService.showDeliveries" (click)="taskPane()"></button>
+    <!-- <div class="showTasks"> -->
+
+        <app-show-tasks *ngIf="this.sharedDataService.showTasksPane">
+        </app-show-tasks>
+    <!-- </div> -->
+    <app-show-deliveries *ngIf="this.sharedDataService.showDeliveries"></app-show-deliveries>
+    <div *ngIf="this.sharedDataService.createTaskPane" class="task">
+        <app-create-task ></app-create-task>
+    </div>
+    <!-- <div class="body" *ngIf="!this.sharedDataService.showTasksPane && !this.sharedDataService.showDeliveries && !this.sharedDataService.createTaskPane">
+        <h4 class="text-4xl text-center mt-10 font-bold overflow-hidden">Home Content Here</h4>
+    </div> -->
+</div>
 <!-- <body>
     <app-home />
 </body> -->

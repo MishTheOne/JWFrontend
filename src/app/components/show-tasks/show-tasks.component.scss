@@ -1,0 +1,180 @@
+.container{
+    display: flex;
+    flex-direction: column;
+    width: 25vw;
+    margin-left: -1vw;
+    height: 87vh;
+    box-shadow: 6px 6px 5px  rgba(0, 0, 0, 0.19);
+    position: absolute;
+    top: 12vh;
+}
+.upper{
+    display: flex;
+    flex-direction: row;
+    // border: 2px solid green;
+    // justify-content: center;
+    align-items: center;
+    height: 6vh;
+    width: 24.25vw;
+    background-color: rgb(99, 133, 236);
+    // margin-top: 1vh;
+    .close{
+        margin-left: -1.5vw;
+        font-size: 30px;
+    }
+    .header{
+        margin-right: 19vw;
+        font-size: 1.5vw;
+        padding: 1vh;
+    }
+}
+.body{
+    // border: 2px solid red;
+    // height: 85vh;
+    display: flex;
+    // margin-top: 2vw;
+    width: 24.25vw;
+    flex-direction: column;
+    align-items: flex-start;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+.tasks{
+    // border: 2px solid red;
+    width: 18vw;
+    // margin-left: -1vw;
+    height: 23vh;
+    
+
+    #time{
+        // border: 2px solid brown;
+        width: 7vw;
+        height: 3.5vh;
+        position: relative;
+        top: 1.5vh;
+        font-weight: bold;
+    }
+
+    #recipient{
+        // border: 2px solid brown;
+        width: 7vw;
+        height: 3.5vh;
+        position: relative;
+        top: 2vh;
+        font-weight: bold;
+    }
+
+    #address{
+        // border: 2px solid brown;
+        width: 12vw;
+        height: 3.5vh;
+        position: relative;
+        top: 2.7vh;
+    }
+
+    #map{
+        // border: 2px solid black;
+        width: 7vw;
+        height: 3.5vh;
+        position: relative;
+        left: 10vw;
+        top: -7vh;
+        background-color: gray;
+        font-weight: bold;
+        color: honeydew;
+        justify-content: center;
+        align-items: center;
+        padding: 0.1vw;
+        padding-left: 1.3vw;
+
+    }
+    #map:hover{
+        background-color: rgb(16, 165, 214);
+        font-size: smaller;
+    }
+
+    #status{
+        // border: 2px solid black;
+        width: 7vw;
+        height: 3.5vh;
+        position: relative;
+        left: 10vw;
+        bottom: -3vh;
+        background-color: rgba(255, 135, 135, 0.5);
+        justify-content: center;
+        align-items: center;
+        justify-items: center;
+        font-weight: bold;
+        padding: 0.2vw;
+        padding-left: 0.5vw;
+    }
+}
+
+.agent{
+    width:7vw;
+    // border: 2px solid black;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+    #add{
+        height: 7vh;
+        width: 7vh;
+        position: relative;
+        top: -3vh;
+        left: 2.2vw;
+        // border: 2px solid blue;
+    }
+    .content{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+}
+
+.taskCard{
+    display: flex;
+    flex-direction: row;
+    // border: 2px solid red;
+    width: 25vw;
+    margin-left: -1vw;
+    // width: fit-content;
+}
+
+.assign{
+    // border: 2px solid yellow;
+    height: 3vh;
+    width: 25vw;
+    background-color:  rgb(224, 42, 42, 0.8);
+}
+
+.tabs{
+    // border: 2px solid red;
+    display: flex;
+    flex-direction: row;
+    width: 25vw;
+    height: 6vh;
+    margin-left: -.5vw;
+    background-color: rgba(218, 209, 209, 0.582);
+    .tab{
+        // border: 2px solid black;
+        width: 8vw;
+        height: 5vh;
+        padding: 0.1vw;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 0.5vh;
+    }
+
+    .tab:hover{
+        border-bottom: 2px solid rgba(110, 105, 105, 0.685);
+        cursor: pointer;
+    }
+
+}
+
+.selectedTab{
+    border-bottom: 0.5vh solid rgba(84, 84, 231, 0.644) !important;
+}
+

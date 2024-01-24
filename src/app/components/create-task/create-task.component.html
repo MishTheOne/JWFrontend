@@ -1,0 +1,53 @@
+<div class="form-body">
+  <div class="upper">
+    <span class="new">New Task</span>
+    <button class="close" (click)="closeModal()">&times;</button>
+  </div>
+  <div class=formContainer>
+
+    <form class="form" [formGroup]="deliveries" (ngSubmit)="createTask()">
+
+        <div class="head">
+
+          <p-accordion formArrayName="tasks">
+            <p-accordionTab *ngFor="let formInstance of tasks.controls; let i = index; let c = count;" [header]="deliveryTabHeader(i)">
+              <ng-template pTemplate="header">
+                <button type="button" pButton icon="pi pi-times" class="remove" (click)="removeDelivery(i)"></button>
+              </ng-template>
+              <div class="ele" [formGroupName]="i">
+                <div class="inp">
+  
+                  <label><input type="text" formControlName="name" placeholder="Name"></label>
+                  <label><input type="text" formControlName="email" placeholder="Email"></label>
+                  <label><input type="text" formControlName="address" (input)="addressInputEvent(i, $event)" placeholder="Delivery Address"></label>
+                  <label>
+                    <!-- <input
+                    type="datetime-local"
+                    (input)="timeInputEvent(i, $event)"
+                    min="2018-06-07TT00:00:00"
+                    max="2018-06-14TT00:00:00"
+                    step="2"
+                    formControlName="execTime" /> -->
+
+                    <p-calendar class="datetime" formControlName="execTime" [showTime]="true" [showSeconds]="true" appendTo="body" (ngModelChange)="timeInputEvent(i, $event)" placeholder="Deliver Before"></p-calendar>
+                    
+                  </label>
+  
+                </div>
+                  <!-- <div class="remove">
+  
+                    <button type="button" (click)="removeDelivery(i)">&#8213;</button>
+                    <button type="button" pButton icon="pi pi-times" class="p-button-rounded p-button-danger" (click)="removeDelivery(i)"></button>
+                  </div> -->
+              </div>
+            </p-accordionTab>
+          </p-accordion>
+        </div>
+        <div class="cr">
+          <button class="add" type="button" (click)="addDelivery()">&plus;</button>
+
+          <button class="create" type="submit">Create</button>
+        </div>
+    </form>     
+  </div>
+</div>

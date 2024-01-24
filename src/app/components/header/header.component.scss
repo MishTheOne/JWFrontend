@@ -1,0 +1,61 @@
+.datetime{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid black;
+    padding-top: 0vw;
+    height: 6vh;
+    width: 20vw;
+    background-color: blanchedalmond;
+}
+
+.content{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+input{
+    line-height: 4vh;
+    margin: 1vh;
+    border-radius: 0.7vh;
+    box-shadow: 2px 2px 1px rgb(76, 94, 126);
+    background-color: rgb(182, 240, 222);
+    // padding: 1vh;
+}
+#time{
+    padding: 1vh;
+    margin: 1vh;
+    // border: 2px solid yellow;
+}
+
+.create{
+    background-color: rgb(182, 240, 222);
+    border-radius: 0.7vh;
+    box-shadow: 2px 2px 1px rgb(76, 94, 126);
+    height: 2vw;
+    width: 7vw;
+    margin-left: 2vw;
+    font-weight: bold;
+    font-size: 2.3vh;
+}
+
+.time{
+    border: 2px solid red;
+    height: 4vh;
+    width: 10vw;
+    margin: 1vh;
+}
+
+.date{
+    border: 2px solid red;
+    height: 6vh;
+}
+
+:host ::ng-deep .datepicker{
+    .p-calendar{
+        height: 5vh;
+        width: 10vw;
+    }
+}

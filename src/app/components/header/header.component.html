@@ -1,6 +1,6 @@
-<nav class="w-full flex justify-between items-center p-5 bg-indigo-500 shadow-4xl">
+<nav class="w-full flex justify-between items-center p-3 bg-indigo-500 shadow-4xl flex-row">
     <div class="logo">
-        <span class="text-gray-200 text-4xl flex justify-start items-center">ReadMeBooks</span>
+        <span class="text-gray-200 text-4xl flex justify-start items-center">Tookan</span>
     </div>
     <!-- <div class="search relative">
         <span><i class="fa-solid fa-magnifying-glass"></i></span>
@@ -8,9 +8,37 @@
         class="w-96 p-2 pl-9 rounded rounded-r-none text-gray-600">
         <button class="bg-slate-400 p-2 rounded-r text-white outline-none outline-0">Search</button>
     </div> -->
-    <div class="nav-items">
+    <div class="content"> 
+    <!-- <mat-form-field>
+        <input matInput [matDatepicker]="picker" placeholder="Choose a date">
+        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker ></mat-datepicker>
+    </mat-form-field> -->
+    <!-- <mat-form-field>
+
+        <input [ngxTimepicker]="picker">
+        <ngx-material-timepicker #picker></ngx-material-timepicker>
+    </mat-form-field> -->
+    <!-- <ejs-timepicker [value]='dateValue' [min]='minDate' [max]='maxDate'></ejs-timepicker> -->
+    <div class="datetime" *ngIf="this.sharedDataService.sharedVariable">
+        <input type="date" id="dateInput" placeholder="Date" (input)="saveDate($event)">
+        <div class="timeC">
+            <input type="time" id="timeInput" (input)="saveStartTime($event)">
+            <span>to</span>
+            <input type="time" id="timeInput" (input)="saveStartTime($event)">
+        </div>
+        <!-- <p-datetimepicker [(ngModel)]="date" [showTime]="true"></p-datetimepicker> -->
+            <!-- <div class="time">
+                <p-slider class="timepicker" [(ngModel)]="selectedMinute" [min]="0" [max]="23" [step]="1"></p-slider>
+            </div>
+            <div class="date">
+                <p-calendar class="datepicker" inputStyleClass="cc" [(ngModel)]="selectedDate" appendTo="body"></p-calendar>
+            </div> -->
+    </div>
+        <button class="create" *ngIf="this.sharedDataService.sharedVariable" (click)="taskModal()">Create Task</button>
         <span *ngIf="!this.sharedDataService.sharedVariable" routerLink="/login" class="text-xl cursor-pointer text-gray-200 font-bold m-3 hover:underline hover:text-indigo-200">Login</span>
         <span *ngIf="!this.sharedDataService.sharedVariable" routerLink="/register" class="text-xl cursor-pointer text-gray-200 font-bold m-3 hover:underline hover:text-indigo-200">Register</span>
         <a *ngIf="this.sharedDataService.sharedVariable" (click)="logout()" class="text-xl cursor-pointer text-gray-200 font-bold m-3 hover:underline hover:text-indigo-200">Logout</a>
     </div>
 </nav>
+    

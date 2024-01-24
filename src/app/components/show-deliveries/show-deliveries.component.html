@@ -1,0 +1,33 @@
+<div class="container" *ngIf="this.sharedDataService.showDeliveries">
+    <div class="p">
+        <!-- <label for="dropdown">Task:</label> -->
+         <div class="task">Task</div>
+        <!-- <select id="dropdown" [(ngModel)]="selectedOption" (change)="onOptionSelected()">
+          <option *ngFor="let option of this.sharedDataService.tasks" [value]="option">{{ option }}</option>
+        </select> -->
+
+        <p-dropdown class="dropdown" [options]="deliveries" [(ngModel)]="selectedDelivery" optionLabel="delivery_id" [showClear]="true" placeholder={{selectedDelivery}} (onChange)="onDeliverySelected()"></p-dropdown>
+
+        <div class="close" (click)="close()">&#10006;</div>
+    </div>
+    <div class="tabs">
+      <div class="tab" [ngClass]="{'selectedTab':details}" (click)="detailsTab()">Details</div>
+      <div class="tab" [ngClass]="{'selectedTab':customer}" (click)="customerTab()">Customer</div>
+      <div class="tab" [ngClass]="{'selectedTab':history}" (click)="historyTab()">History</div>
+      <div class="dots"> <img class="dotimg" src="../../../assets/icons/dots.png" alt="menu"> </div>
+    </div>
+
+    <div class="tabContent" *ngIf="details">
+      <div class="deliveryDetails" *ngFor="let data of this.detailsContent | keyvalue">
+        <div class="key">{{data.key}}</div>
+        <div class="val">{{data.value}}</div>
+      </div>
+    </div>
+    <div class="tabContent" *ngIf="customer">
+      <div class="deliveryDetails" *ngFor="let data of this.customerContent | keyvalue">
+        <div class="key">{{data.key}}</div>
+        <div class="val">{{data.value}}</div>
+      </div>
+    </div>
+    <div class="tabContent" *ngIf="history">Three</div>
+</div>

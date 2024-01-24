@@ -2,8 +2,12 @@
     <h3 class="text-3xl text-center font-semibold py-5">Register</h3>
     <form [formGroup]="registerForm" class="flex flex-col">
         <div class="flex flex-col mt-10 mb-1">
-            <input formControlName="name" class="p-2 border border-gray-300 rounded justify-center" type="text" placeholder="Name">
-            <span *ngIf="registerForm.hasError('required','name') && registerForm.controls['name'].dirty" class="text-red-500">*Field is required</span>
+            <input formControlName="fname" class="p-2 border border-gray-300 rounded justify-center" type="text" placeholder="First Name">
+            <span *ngIf="registerForm.hasError('required','fname') && registerForm.controls['fname'].dirty" class="text-red-500">*Field is required</span>
+        </div>
+        <div class="flex flex-col mt-4 mb-1">
+            <input formControlName="lname" class="p-2 border border-gray-300 rounded justify-center" type="text" placeholder="Last Name">
+            <span *ngIf="registerForm.hasError('required','lname') && registerForm.controls['lname'].dirty" class="text-red-500">*Field is required</span>
         </div>
         <div class="flex flex-col mt-4 mb-1">
             <input formControlName="email" class="p-2 border border-gray-300 rounded" type="text" placeholder="Email">

@@ -19,4 +19,6 @@ export class AuthService {
   logoutService(){
     return this.http.get(`${apiUrls.authServiceApi}logout`, { withCredentials: true });
   }
+
+
 }

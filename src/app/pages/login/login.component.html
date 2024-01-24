@@ -1,5 +1,5 @@
-<div class="lg:w-3/12 mt-5 p-10 shadow-lg mx-auto">
-    <h3 class="text-3xl text-center font-semibold py-5">Login</h3>
+<div class="lg:w-3/12 mt-5 p-10 shadow-lg mx-auto mb-10">
+    <h3 class="text-7xl text-center font-semibold py-5">Login</h3>
     <form [formGroup]="loginForm" class="flex flex-col">
         <div class="flex flex-col mt-4 mb-1">
             <input formControlName="email" class="p-2 border border-gray-300 rounded" type="text" placeholder="Email">
@@ -16,3 +16,4 @@
         <span>Don't have an account?</span> <a routerLink="/register" class="text-indigo-600 ml-2 cursor-pointer">Register</a>
     </div>
 </div>
+<div class="invalid" *ngIf="loginForm.errors?.['unauthenticated']">Invalid Credentials</div>

@@ -1,5 +1,5 @@
 import { Component, inject, OnInit } from '@angular/core';
-import { Router } from 'express';
+import { Router } from '@angular/router';
 import { CookieService } from 'ngx-cookie-service';
 import { SharedDataService } from '../../services/shared-data.service';
 
